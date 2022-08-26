@@ -2,8 +2,8 @@ import {BrowserRouter as Router,Route,Routes,Link,useLocation,Nav} from 'react-r
 
 export default function Admin(){
 return(<>
-<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-<table class="table caption-top">
+<div className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+<table className="table caption-top">
         <caption>List of users</caption>
         <thead>
           <tr>
@@ -19,8 +19,8 @@ return(<>
             <th scope="row">1</th>
             <td>Jacob</td>
             <td>Thornton</td>
-            <td><button  class="btn mx-2 btn-sm btn-danger">delete</button>  
-            <Link  class="btn btn-sm btn-info" to="/Singletransaction">view</Link> 
+            <td><button  className="btn mx-2 btn-sm btn-danger">delete</button>  
+            <Link  className="btn btn-sm btn-info" to="/Singletransaction">view</Link> 
          </td>
           </tr>
          

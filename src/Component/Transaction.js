@@ -40,11 +40,10 @@ function Transaction(){
         userName:sessionStorage.getItem('userid'),
        
 
-    }).then((response)=>{
-    
+    }).then((response)=>{  
       if (response.data.Income == null && response.data.Balance== null ) {
         console.log(response.data)
-        setBack(response.data);
+        setBack({userName:sessionStorage.getItem('userid'),Balance:"0",Income:"0",Expenses:"0"});
         
     }else{
       console.log(response.data)
@@ -61,15 +60,15 @@ function Transaction(){
         Date:date,
         Description:description,
         Category:category,
-        Income:"true",
-        Expenses:"false",
-        Balance:transaction,
+        Income:parseInt(back.Income) + parseInt(transaction),
+        Expenses:back.Expenses,
+        Balance:parseInt(back.Balance)+parseInt(transaction) ,
         transaction:transaction
     }).then((response)=>{
-      alert("successfully inserted");
+     
       if (response.data.Income == null && response.data.Balance== null ) {
         setData(response.data);
-        
+        alert("successfully inserted");
     }else{
       console.log(response.data)
            setData(response.data);
@@ -84,16 +83,16 @@ function Transaction(){
         Date:date,
         Description:description,
         Category:category,
-        Income:"false",
-        Expenses:transaction,
+        Income:back.Income,
+        Expenses:parseInt(back.Expenses) + parseInt(transaction),
         Balance:back.Balance-transaction,
         transaction:transaction
   
     }).then((response)=>{
-      alert("successfully inserted");
+      
       if (response.data.Income == null && response.data.Balance== null ) {
         // setData(response.data);
-        
+        alert("successfully inserted");
     }else{
       console.log(response.data)
           //  setData(response.data);
@@ -103,20 +102,20 @@ function Transaction(){
   }
     }
     return(<>
- <div class="row col-md-9 ms-sm-auto col-lg-10 px-md-4">
-         <div className="col-12"> 
+ <div className="row col-md-9 ms-sm-auto col-lg-10 px-md-4">
+         <div classNameName="col-12"> 
          <nav>
-               <div class="nav nav-tabs mb-3 my-4" id="nav-tab" role="tablist">                
-                 <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Transaction</button>
-                 <button class="nav-link " id="nav-Transaction-tab" data-bs-toggle="tab" data-bs-target="#nav-Transaction" type="button" role="tab" aria-controls="nav-Transaction" aria-selected="false">Add Transaction</button>
-                 <button class="nav-link " id="nav-category-tab" data-bs-toggle="tab" data-bs-target="#nav-category" type="button" role="tab" aria-controls="nav-category" aria-selected="false">Category</button>                               
+               <div className="nav nav-tabs mb-3 my-4" id="nav-tab" role="tablist">                
+                 <button className="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Transaction</button>
+                 <button className="nav-link " id="nav-Transaction-tab" data-bs-toggle="tab" data-bs-target="#nav-Transaction" type="button" role="tab" aria-controls="nav-Transaction" aria-selected="false">Add Transaction</button>
+                 <button className="nav-link " id="nav-category-tab" data-bs-toggle="tab" data-bs-target="#nav-category" type="button" role="tab" aria-controls="nav-category" aria-selected="false">Category</button>                               
                </div>
              </nav>
          
-             <div class="tab-content" id="nav-tabContent">
-               <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+             <div className="tab-content" id="nav-tabContent">
+               <div className="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
               
-                    <table class="table">
+                    <table className="table">
                    <thead>
                    <th>date</th>
          <th>Category </th>
@@ -132,32 +131,32 @@ return(
               
                        <tr key={val.id} >
                 
-         <td className="text-black">{val.Date}</td>
+         <td classNameName="text-black">{val.Date}</td>
          <td>{val.Category}</td>
          <td>${val.Income}</td>
          <td>${val.Balance}</td>
          <td>${val.Expenses}</td>
-         <td><button  class="btn btn-sm btn-danger">delete</button>       
-               <button  class="btn btn-sm btn-primary">Edit</button>  
+         <td><button  className="btn btn-sm btn-danger">delete</button>       
+               <button  className="btn btn-sm btn-primary">Edit</button>  
              </td>
          </tr>
 )
           })}
             </tbody>
                </table>
-           <div class="bd-example mx-5 ">
+           <div className="bd-example mx-5 ">
                  <nav aria-label="Standard pagination example text-align-center justify-content-between align-items-center">
-                   <ul class="pagination">
-                     <li class="page-item">
-                       <a class="page-link" href="#" aria-label="Previous">
+                   <ul className="pagination">
+                     <li className="page-item">
+                       <a className="page-link" href="#" aria-label="Previous">
                          <span aria-hidden="true">«</span>
                        </a>
                      </li>
-                     <li class="page-item"><a class="page-link" href="#">1</a></li>
-                     <li class="page-item"><a class="page-link" href="#">2</a></li>
-                     <li class="page-item"><a class="page-link" href="#">3</a></li>
-                     <li class="page-item">
-                       <a class="page-link" href="#" aria-label="Next">
+                     <li className="page-item"><a className="page-link" href="#">1</a></li>
+                     <li className="page-item"><a className="page-link" href="#">2</a></li>
+                     <li className="page-item"><a className="page-link" href="#">3</a></li>
+                     <li className="page-item">
+                       <a className="page-link" href="#" aria-label="Next">
                          <span aria-hidden="true">»</span>
                        </a>
                      </li>
@@ -165,62 +164,62 @@ return(
                  </nav>
                  </div>
                </div>
-               <div class="tab-pane fade " id="nav-Transaction" role="tabpanel" aria-labelledby="nav-profile-tab">
-                 <div class="row  p-5">
-                     <div class="col-12 col-lg-2 col-md-2"></div>
-                     <div class="form-check form-switch">
-                         <input class="form-check-input" type="checkbox" name="Income" id="flexSwitchCheckDefault"
+               <div className="tab-pane fade " id="nav-Transaction" role="tabpanel" aria-labelledby="nav-profile-tab">
+                 <div className="row  p-5">
+                     <div className="col-12 col-lg-2 col-md-2"></div>
+                     <div className="form-check form-switch">
+                         <input className="form-check-input" type="checkbox" name="Income" id="flexSwitchCheckDefault"
                         onChange={(e)=>{
                           setIncome(e.target.checked);
                       }} />
-                         <label class="form-check-label" for="flexSwitchCheckDefault">Income</label>
+                         <label className="form-check-label" for="flexSwitchCheckDefault">Income</label>
                        </div>
-                       <div class="form-check form-switch">
-                         <input class="form-check-input" type="checkbox" name="Expenses" id="flexSwitchCheckDefault"
+                       <div className="form-check form-switch">
+                         <input className="form-check-input" type="checkbox" name="Expenses" id="flexSwitchCheckDefault"
                          onChange={(e)=>{
                           setExpenses(e.target.checked);
                       }}/>
-                         <label class="form-check-label" for="flexSwitchCheckDefault">Expenses</label>
+                         <label className="form-check-label" for="flexSwitchCheckDefault">Expenses</label>
                        </div>
-                     <div class="col-12 col-lg-4 col-md-4 ">
-         <input type="text" class="form-control mb-2" name="Date" placeholder=" Amount... " id=""
+                     <div className="col-12 col-lg-4 col-md-4 ">
+         <input type="text" className="form-control mb-2" name="Date" placeholder=" Amount... " id=""
          onChange={(e)=>{
           setTransaction(e.target.value);
          }}/>
-         <input type="Date" class="form-control mb-2"  placeholder="Date... " id="Date" onChange={(e)=>{
+         <input type="Date" className="form-control mb-2"  placeholder="Date... " id="Date" onChange={(e)=>{
                     setDate(e.target.value);
                 }}/>
         
-         <small id="helpId" class="form-text text-muted"> Category</small>
-         <select class="form-select mb-2" name="Category" id="iq"  onChange={(e)=>{
+         <small id="helpId" className="form-text text-muted"> Category</small>
+         <select className="form-select mb-2" name="Category" id="iq"  onChange={(e)=>{
                     setCategory(e.target.value);
                 }} 
           >
    
            <option value="">Choose...</option>
-           <option>Popular </option>
-           <option>New </option>
-         
+           <option>Food </option>
+           <option>Transport </option>
+           <option>Entertainment</option>
          </select>
-         <div class="mb-3">
-             <label for="exampleFormControlTextarea1" class="form-label"> you can add a
+         <div className="mb-3">
+             <label for="exampleFormControlTextarea1" className="form-label"> you can add a
                  description</label>
-             <textarea class="form-control" id="exampleFormControlTextarea1" name="Description" rows="3"
+             <textarea className="form-control" id="exampleFormControlTextarea1" name="Description" rows="3"
              onChange={(e)=>{
               setDescription(e.target.value);
           }}
              ></textarea>
            </div>
-         <button class="btn btn-sm btn-info" onClick={Create}>Create</button>  
+         <button className="btn btn-sm btn-info" onClick={Create}>Create</button>  
      </div>
                     </div>
            </div>
-               <div class="tab-pane fade " id="nav-category" role="tabpanel" aria-labelledby="nav-profile-tab">
-                <div class="row  p-5">
-                 <div class="col-12 col-lg-2 col-md-2"></div>
-    <div class="col-12 col-lg-4 col-md-4 ">
-     <input type="text" class="form-control mb-2" name="" placeholder="new Category" id=""/>
- <button class="btn btn-sm btn-info">Add</button>  
+               <div className="tab-pane fade " id="nav-category" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div className="row  p-5">
+                 <div className="col-12 col-lg-2 col-md-2"></div>
+    <div className="col-12 col-lg-4 col-md-4 ">
+     <input type="text" className="form-control mb-2" name="" placeholder="new Category" id=""/>
+ <button className="btn btn-sm btn-info">Add</button>  
  </div>
                 </div>
                    </div>

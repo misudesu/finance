@@ -3,27 +3,27 @@ import imge from '../img/erica-photo1-full.jpg'
 function SingleTransaction(){
     return(
 
-    <div class="container col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <div class="row">
-                <div class="col-12 col-lg-3 col-md-3 p-5 me-auto">
-                    <div class="about-img"> 
-            <img src={imge} alt="" class="rounded img-fluid"/>
+    <div className="container col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div className="row">
+                <div className="col-12 col-lg-3 col-md-3 p-5 me-auto">
+                    <div className="about-img"> 
+            <img src={imge} alt="" className="rounded img-fluid"/>
                 </div>
                 <p>Misaeldessalegn@gmail.com</p>
                 </div>
-                <div class="col-12 p-5 ms-auto col-lg-8 col-md-8 ">
+                <div className="col-12 p-5 ms-auto col-lg-8 col-md-8 ">
                <p>What  he/she Have?</p>
                <span >INCOME</span>
-                <div class="progress mb-2">
-                  <div class="progress-bar" role="progressbar" style={{width: "25%;"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                <div className="progress mb-2">
+                  <div className="progress-bar" role="progressbar" style={{width: "25%;"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                   </div>
                   <span>Expenses</span>
-                  <div class="progress mb-2">
-                <div class="progress-bar" role="progressbar" style={{width: "50%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%</div>
+                  <div className="progress mb-2">
+                <div className="progress-bar" role="progressbar" style={{width: "50%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%</div>
                   </div>
                   <span>Balance</span>
-                  <div class="progress mb-2">
-                    <div class="progress-bar" role="progressbar" style={{width: "95%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">95%</div>
+                  <div className="progress mb-2">
+                    <div className="progress-bar" role="progressbar" style={{width: "95%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">95%</div>
                   </div>   
             </div>
 
@@ -33,11 +33,11 @@ function SingleTransaction(){
             
       
        
-       <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-12 col-lg-12 p-5 ms-auto">
-                <table class="table caption-top">
-                    <caption><strong class="text-primary fs-5">All Activity</strong></caption>
+       <div className="container">
+        <div className="row">
+            <div className="col-12 col-md-12 col-lg-12 p-5 ms-auto">
+                <table className="table caption-top">
+                    <caption><strong className="text-primary fs-5">All Activity</strong></caption>
                     <thead>
                       <tr>
                         <th scope="col">#</th>
@@ -53,7 +53,7 @@ function SingleTransaction(){
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>Otto</td>
-                        <td><button  class="btn btn-sm btn-danger">delete</button>  
+                        <td><button  className="btn btn-sm btn-danger">delete</button>  
                      </td>
                       </tr>
                       <tr>
@@ -61,7 +61,7 @@ function SingleTransaction(){
                         <td>Jacob</td>
                         <td>Thornton</td>
                         <td>Otto</td>
-                        <td><button  class="btn btn-sm btn-danger">delete</button>  
+                        <td><button  className="btn btn-sm btn-danger">delete</button>  
                      </td>
                       </tr>
         

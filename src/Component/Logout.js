@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 export default function Logout() {
     let navigate = useNavigate();
     sessionStorage.removeItem('userid');
-    navigate("/");
+    navigate("/login");
   return (
     <div>
-      
+     {navigate("/login")} 
     </div>
   )
 }

@@ -31,18 +31,7 @@ function Login(){
     });
   }
 useEffect(()=>{
-  // Axios.get("http://localhost:3001/api/get").then((response)=>{
-  //   setAuth(response.data);
-  //   if (response.data.loggedIn == true) {
-  //     setRole(response.data.user[0].role);
-  //     navigate("/");
-  //   }
-  // });
-  // Axios.post("http://localhost:3001/login").then((response) => {
-  //   if (response.data.loggedIn == true) {
-  //     navigate("/");
-  //   }
-  // });
+  
   
 },[]);
     return(
@@ -50,6 +39,9 @@ useEffect(()=>{
         <div>
        
         <div class="container">
+       <div class="text-center mt-5" > <h1>Wel-Come</h1>
+                <p>We’ll show you how our products, services, and success all work together</p>
+           </div>
          <div class="row">
    
                 <div className='col-12 col-lg-5 col-md-5 p-5 m-auto'>
@@ -101,33 +93,14 @@ useEffect(()=>{
   {/* <!-- Register buttons --> */}
   <div class="text-center">
     <p>Not a member? <Link to="/SignUp">Register</Link></p>
-    <p>or sign up with:</p>
-    <button type="button" class="btn btn-link btn-floating mx-1">
-      <i class="fab fa-facebook-f"></i>
-    </button>
+    
 
-    <button type="button" class="btn btn-link btn-floating mx-1">
-      <i class="fab fa-google"></i>
-    </button>
-
-    <button type="button" class="btn btn-link btn-floating mx-1">
-      <i class="fab fa-twitter"></i>
-    </button>
-
-    <button type="button" class="btn btn-link btn-floating mx-1">
-      <i class="fab fa-github"></i>
-    </button>
+    
+    
   </div>
   </div>
 
-                {/* <div class="col-12 col-lg-4 col-md-4 bg-light m-auto ">
-                    <input type="text" class="form-control mb-2" placeholder="User name"/>
-                        <input type="password" class="mb-2 form-control" name="password" id="" placeholder="pssword"/>
-                        <Link class="btn btn-primary   " to="dashbord">Login</Link>
-                        <Link to="/" class=""> <p>Forgate Password?</p></Link>
-                        <Link to="SignUp" class="btn btn-sm btn-outline-primary d-flex">SignUp</Link>
-          
- </div> */}
+               
             
              </div>
          

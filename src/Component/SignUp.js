@@ -18,19 +18,24 @@ password:password,
 
    }
    return(<>
-     <section id="signUp" class="section-padding p-5 bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-4 col-md-4 m-auto p-auto ">
+     <section id="signUp" className="section-padding p-5 bg-light">
+    <div className="container">
+        <div className="row">
+            <div className="col-12 col-lg-12 col-md-12 text-center p-5">
+                
+                <h1>Get Started</h1>
+                <p>We’ll show you how our products, services, and success all work together</p>
+            </div>
+            <div className="col-12 col-lg-4 col-md-4 m-auto p-auto ">
              
-                <input type="text" name="userName" class="form-control mb-2" placeholder="Email" onChange={(e)=>{
+                <input type="text" name="userName" className="form-control mb-2" placeholder="Email" onChange={(e)=>{
                     setUserName(e.target.value);
                 }}/>
-                <input type="password" class="mb-2 form-control" name="password" placeholder="password" id="one"
+                <input type="password" className="mb-2 form-control" name="password" placeholder="password" id="one"
                 onChange={(e)=>{
                     setPassword(e.target.value);
                 }}/>
-               <button    class="btn btn-primary " onClick={submit}>SignUp</button>        
+               <button    className="btn btn-primary " onClick={submit}>SignUp</button>        
             </div>
         </div>
     </div>
