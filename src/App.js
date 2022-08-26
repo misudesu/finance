@@ -55,12 +55,7 @@ export default function App() {
                  Transactions
                 </Link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                 user
-                </a>
-              </li>
+             
               <li class="nav-item">
                 <Link class="nav-link" to="/Admin">
                   <span data-feather="users"></span>
